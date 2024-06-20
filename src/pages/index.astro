@@ -1,0 +1,49 @@
+---
+import ButtonEvent from "../components/ButtonEvent.astro";
+import ButtonHead from "../components/ButtonHead.astro";
+import Layout from "../layouts/Layout.astro";
+
+console.log("pueba");
+---
+
+<Layout title='Welcome to Astro.'>
+  <body>
+    <section>
+      <div class='button-grid'>
+        <ButtonHead title='Eventos' />
+        <ButtonHead title='Verificador' />
+        <ButtonHead title='Buscar' />
+      </div>
+      <article>
+        <h2>Eventos</h2>
+        <!-- Example event button -->
+        <ButtonEvent
+          event='Robo'
+          account='0001'
+          date='20-06-24'
+          operator='OVICTOR'
+        />
+        <!-- Add more event buttons here -->
+      </article>
+    </section>
+  </body>
+</Layout>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .logout-button {
+    margin-left: auto;
+  }
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    button {
+      padding: 0.3rem;
+      font-size: 16px;
+    }
+  }
+</style>

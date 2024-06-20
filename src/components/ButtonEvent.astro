@@ -1,0 +1,27 @@
+---
+const { event, account, date, operator } = Astro.props;
+---
+
+<button class='event-button'>
+  <p>Cuenta: {account}</p>
+  <p>{event}</p>
+  <p>{date}</p>
+  <p>{operator}</p>
+</button>
+<style>
+  .event-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #ccc;
+    border: 1px solid;
+    p {
+      text-align: center;
+      border-inline: 1px solid;
+      padding: 0.3rem;
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+</style>
