@@ -1,0 +1,101 @@
+[
+  {
+    "cuentas": {
+      "cuenta": 1,
+      "activo": false,
+      "particiones": [
+        {
+          "particion": 0,
+          "nombreEmpresa": "",
+          "direccion": {
+            "calle": "",
+            "numero": "",
+            "colonia": "",
+            "municipio": "",
+            "cp": ""
+          }
+        }
+      ],
+      "zonas": [
+        {
+          "zona": 0,
+          "nombreZona": "",
+          "inalambrico": false
+        }
+      ],
+      "servicios": [
+        {
+          "servicio": 0,
+          "nombreServicio": "",
+          "descripcion": "",
+          "costo": 0.0,
+          "iva": 0.0,
+          "total": 0.0
+        }
+      ],
+      "facturas": [
+        {
+          "factura": 0,
+          "fecha": "",
+          "monto": 0.0,
+          "iva": 0.0,
+          "total": 0.0,
+          "status": ""
+        }
+      ],
+      "pagos": [
+        {
+          "pago": 0,
+          "fecha": "",
+          "monto": 0.0,
+          "iva": 0.0,
+          "total": 0.0,
+          "status": ""
+        }
+      ],
+      "usuarios": [
+        {
+          "usuario": 0,
+          "nombre": "",
+          "apellidoPaterno": "",
+          "apellidoMaterno": "",
+          "email": "",
+          "telefono": "",
+          "direccion": "",
+          "rol": "",
+          "prioridad": 1,
+          "permiteLLamarle": false
+        }
+      ],
+      "historial": [
+        {
+          "historial": 0,
+          "fecha": "",
+          "descripcion": "",
+          "prioridad": 1,
+          "status": "",
+          "operador": ""
+        }
+      ],
+      "notificaciones": [
+        {
+          "notificacion": 0,
+          "fecha": "",
+          "descripcion": "",
+          "prioridad": 1,
+          "status": ""
+        }
+      ],
+      "Notas": [
+        {
+          "nota": 0,
+          "fecha": "",
+          "descripcion": "",
+          "prioridad": 1,
+          "status": "",
+          "operador": ""
+        }
+      ]
+    }
+  }
+]
