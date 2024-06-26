@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nombre": "admin",
+    "apellido": "admin",
+    "email": "admin@operador.com",
+    "contraseña": 123456,
+    "telefono": "11999999999",
+    "direccion": "Rua 1, 123, Bairro 1, Cidade 1, Estado 1, CEP 12345-678",
+    "rol": "Operador"
+  },
+  {
+    "id": 2,
+    "nombre": "user",
+    "apellido": "user",
+    "email": "user@operador.com",
+    "contraseña": 123456,
+    "telefono": "11999999999",
+    "direccion": "Rua 1, 123, Bairro 1, Cidade 1, Estado 1, CEP 12345-678",
+    "rol": "Operador"
+  }
+]

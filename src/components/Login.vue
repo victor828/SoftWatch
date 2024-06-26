@@ -1,6 +1,31 @@
 <script setup lang="ts">
-const prop = defineProps(["title", "pcuenta1", "pcuenta2", "reference"]);
+const prop = defineProps([
+  "title",
+  "pcuenta1",
+  "pcuenta2",
+  "reference",
+  "data",
+]);
 import ButtonHead from "./ButtonHead.vue";
+import centralData from "../data/central.json";
+import { ref } from "vue";
+import { number, string } from "astro/zod";
+// import { getCentralData } from "../utils/utils";
+
+const user = ref("admin");
+const pass = ref(123456);
+
+const data = centralData.filter((u) => {
+  if (u.nombre == user.value && u.contraseña === pass.value) {
+    console.log("funciono");
+    return u.nombre;
+  } else {
+    console.log("no funciono");
+  }
+});
+console.log(data);
+
+// console.log(getCentralData(String(user), String(pass)));
 </script>
 
 <template>
@@ -70,21 +95,27 @@ import ButtonHead from "./ButtonHead.vue";
       </svg>
     </div>
     <!-- <p>{{ title }}</p> -->
-    <h1 class="text-2xl">{{ title }}</h1>
+    <h1 class="text-2xl">{{ prop.title }}</h1>
+    <!-- Obtener la data de los input para poder ver si estan en la base de datos -->
     <article>
-      <input type="text" id="username" placeholder="Username" />
+      <input v-model="user" type="text" placeholder="Username" />
     </article>
     <article>
-      <input type="text" id="password" placeholder="Password" />
+      <input v-model="pass" type="password" placeholder="Password" />
     </article>
     <div class="w-full">
       <ButtonHead title="Inicicar Sesion" class="w-full py-2" />
       <p class="text-xs text-center pt-2">
-        {{ pcuenta1 }}
-        <a class="opacity-75" v-bind:href="reference">{{ pcuenta2 }}</a>
+        {{ prop.pcuenta1 }}
+        <a class="opacity-75" v-bind:href="reference">{{ prop.pcuenta2 }}</a>
       </p>
     </div>
   </section>
+  <div class="grid border border-black p-2 h-fit justify-center w-4/6">
+    <p>{{ user }}</p>
+    <p>{{ pass }}</p>
+    <p class="w-fit">{{ data }}</p>
+  </div>
 </template>
 
 <style scoped>
