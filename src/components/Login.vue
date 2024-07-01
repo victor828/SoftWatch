@@ -6,26 +6,14 @@ const prop = defineProps([
   "reference",
   "data",
 ]);
+import { login } from "../utils/utils";
 import ButtonHead from "./ButtonHead.vue";
-import centralData from "../data/central.json";
 import { ref } from "vue";
-import { number, string } from "astro/zod";
-// import { getCentralData } from "../utils/utils";
 
-const user = ref("admin");
-const pass = ref(123456);
-
-const data = centralData.filter((u) => {
-  if (u.nombre == user.value && u.contraseña === pass.value) {
-    console.log("funciono");
-    return u.nombre;
-  } else {
-    console.log("no funciono");
-  }
-});
-console.log(data);
-
-// console.log(getCentralData(String(user), String(pass)));
+const user = ref("");
+const pass = ref("");
+let response: boolean = true;
+// console.log(login(user.value, pass.value));
 </script>
 
 <template>
@@ -101,15 +89,27 @@ console.log(data);
       <input v-model="user" type="text" placeholder="Username" />
     </article>
     <article>
-      <input v-model="pass" type="password" placeholder="Password" />
+      <input
+        v-model="pass"
+        type="password"
+        placeholder="Password"
+        @keyup.enter="login(user, pass)" />
     </article>
     <div class="w-full">
-      <ButtonHead title="Inicicar Sesion" class="w-full py-2" />
+      <button
+        @click="() => login(user, pass)"
+        class="w-full py-2 bg-zinc-950 hover:bg-zinc-800 active:bg-zinc-600 text-white">
+        Inicicar Sesion
+      </button>
       <p class="text-xs text-center pt-2">
         {{ prop.pcuenta1 }}
         <a class="opacity-75" v-bind:href="reference">{{ prop.pcuenta2 }}</a>
       </p>
     </div>
+    <article>
+      <p v-if="response === true"></p>
+      <p v-else>El usuario o contraseña no es valido, intenta otra vez</p>
+    </article>
   </section>
   <div class="grid border border-black p-2 h-fit justify-center w-4/6">
     <p>{{ user }}</p>

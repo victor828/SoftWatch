@@ -3,7 +3,7 @@ interface Props {
   title: string;
 }
 
-const { title, user } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -80,13 +80,8 @@ const { title, user } = Astro.props;
     </svg>
 
     <div class='user-info'>
-<<<<<<< HEAD
-      <h3>{user}</h3>
-      <button class='logout-button'>Logout</button>
-=======
       <h3>UserName</h3>
       <a href='login' class='bg-zinc-700 text-white p-2 rounded'>Logout</a>
->>>>>>> ad489d6 (add Login Signup components)
     </div>
   </header>
   <body>
